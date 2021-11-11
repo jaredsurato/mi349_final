@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/source-code-pro.min.css");
+
 body {
     background-color: #3A4750;
     color: #eee;
@@ -9,6 +11,28 @@ main {
     margin-left: 50px;
     padding: 1%;
     height: 2000px;
+}
+header {
+  border-bottom: 1px solid #D72323;
+}
+.main-header {
+  font-family: 'Source Code Pro', sans-serif;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+
+.blinker {
+  animation-name: blinker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes blinker {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
 }
 
 /* Style the sidebar - fixed full height */
@@ -22,28 +46,97 @@ main {
     background-color: #3A4750;
     overflow-x: hidden;
     padding-top: 16px;
-  }
+}
 .logo {
       width: 30px;
       height: auto;
-  }
+}
   
-  /* Style sidebar links */
-  .sidebar a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #eee;
-    display: block;
-  }
-  
-  /* Style links on mouse-over */
-  .sidebar a:hover {
-    color: #D72323;
-  }
-  
-  /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
+/* Style sidebar links */
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #eee;
+  display: block;
+}
+
+/* Style links on mouse-over */
+.sidebar a:hover {
+  color: #D72323;
+}
+
+.bio-boxes {
+  display:flex;
+  margin:5px;
+}
+
+.bio-box {
+  background-color:#3A4750;
+  border-left: 1px solid #D72323;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 1 0px
+}
+
+.bio-box:hover {
+  background-color:#D72323;
+  transition: ease-in-out 200ms;
+  box-shadow: #222 5px 5px 10px;
+}
+
+.bio-box h2 {
+  font-size: 18px;
+  text-align: center;
+}
+.bio-box p {
+  font-size: 14px;
+  text-align: center;
+}
+.sentence {
+  font-size: 60px;
+  text-align: center;
+  margin-right: 40%;
+  margin-left: 33%;
+}
+.fadeIn{
+	display: inline;
+	text-indent: 8px;
+}
+.fadeIn span{
+	animation: fadeEffect 12.5s linear infinite 0s;
+	color: #D72323;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+.fadeIn span:nth-child(2){
+	animation-delay: 2.5s;
+}
+.fadeIn span:nth-child(3){
+	animation-delay: 5s;
+}
+.fadeIn span:nth-child(4){
+	animation-delay: 7.5s;
+}
+.fadeIn span:nth-child(5){
+	animation-delay: 10s;
+}
+
+/*FadeIn Animation*/
+@keyframes fadeEffect{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(0px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(0px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media (max-height: 500px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+  .bio-boxes {flex-direction:column;}
+}
