@@ -1,22 +1,30 @@
 @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/source-code-pro.min.css");
-
+html {
+  height: 100%;
+  margin: 0 auto;
+}
 body {
-    background-color: #3A4750;
-    color: #eee;
-    font-family: Arial, sans-serif;
+  height: 100%;
+  background-color: #303841;
+  color: #eee;
+  font-family: Arial, sans-serif;
+  border: 0px;
+  margin: 0 auto;
 }
 
 main {
-    background-color:#303841;
-    margin-left: 50px;
-    padding: 1%;
-    height: 2000px;
+  background-color:#303841;
+  margin-left: 50px;
+  padding: 2%;
+  box-sizing:border-box;
 }
+
 header {
   border-bottom: 1px solid #D72323;
 }
 .main-header {
   font-family: 'Source Code Pro', sans-serif;
+  font-weight: 100;
   padding-top: 0;
   margin-top: 0;
   margin-bottom: 5px;
@@ -46,6 +54,7 @@ header {
     background-color: #3A4750;
     overflow-x: hidden;
     padding-top: 16px;
+    padding-right: 10px;
 }
 .logo {
       width: 30px;
@@ -59,6 +68,7 @@ header {
   font-size: 20px;
   color: #eee;
   display: block;
+  flex: 1 1 0px;
 }
 
 /* Style links on mouse-over */
@@ -69,9 +79,11 @@ header {
 .bio-boxes {
   display:flex;
   margin:5px;
+  margin-bottom: 5%;
 }
 
 .bio-box {
+  transition-duration: 300ms;
   background-color:#3A4750;
   border-left: 1px solid #D72323;
   padding: 10px;
@@ -81,7 +93,8 @@ header {
 
 .bio-box:hover {
   background-color:#D72323;
-  transition: ease-in-out 200ms;
+  border-left: 1px solid #eee;
+  /* transition: ease-in-out 200ms; */
   box-shadow: #222 5px 5px 10px;
 }
 
@@ -93,15 +106,25 @@ header {
   font-size: 14px;
   text-align: center;
 }
-.sentence {
-  font-size: 60px;
-  text-align: center;
-  margin-right: 40%;
-  margin-left: 33%;
+
+.sentence-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-55%, -50%);
 }
+
+.sentence {
+  font-size: 60px;  
+}
+
 .fadeIn{
 	display: inline;
-	text-indent: 8px;
+	text-indent: 16px;
 }
 .fadeIn span{
 	animation: fadeEffect 12.5s linear infinite 0s;
@@ -133,6 +156,64 @@ header {
 	80% { opacity: 0; }
 	100% { opacity: 0; }
 }
+
+
+.slider {
+  border-radius: 10px;
+  width: 1000px;
+  height: 750px;
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  text-align: center;
+  overflow: hidden;
+}
+.image-container {
+  border-radius: 10px;
+  width: 3000px;
+  background-color: pink;
+  height: 750px;
+  clear: both;
+  position: relative;
+  transition: left 2s;
+}
+.slide {
+  border-radius: 10px;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  width: 1000px;
+  height: 750px;
+}
+#slide-1:target ~ .image-container {
+  left: 0px;
+}
+#slide-2:target ~ .image-container {
+  left: -1000px;
+}
+#slide-3:target ~ .image-container {
+  left: -2000px;
+}
+.buttons {
+  position: relative;
+  top: -25px;
+}
+.buttons a {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  background-color: #3A4750;
+  margin: 0 15px;
+}
+
+.buttons a:hover {
+  background-color: #D72323;
+}
+
 
 /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
 @media (max-height: 500px) {
