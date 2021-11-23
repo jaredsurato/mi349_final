@@ -30,6 +30,31 @@ header {
   margin-bottom: 5px;
 }
 
+.bio-portrait-text {
+  display: flex;
+}
+#bio-text {
+  background-color: #3A4750;
+  padding: 2%;
+  padding-left: 1%;
+  margin: 2%;
+  font-size: 24px;
+  border-left: 1px solid #D72323;
+  font-weight: normal;
+}
+#portrait {
+  padding: 2%;
+  width: 400px;
+  height: auto;
+  border-radius: 50%;
+}
+
+
+#updates {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .blinker {
   animation-name: blinker;
@@ -80,6 +105,8 @@ header {
   display:flex;
   margin:5px;
   margin-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .bio-box {
@@ -157,7 +184,10 @@ header {
 	100% { opacity: 0; }
 }
 
-
+#image-header {
+  margin: 0 auto;
+  text-align: center;
+}
 .slider {
   border-radius: 10px;
   width: 1000px;
