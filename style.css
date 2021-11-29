@@ -49,12 +49,26 @@ header {
   border-radius: 50%;
 }
 
-
 #updates {
   display: flex;
   flex-direction: column;
 }
 
+#updates-bio {
+  transition-duration: 300ms;
+  background-color: #3A4750;
+  margin: 1%;
+  padding: 2%;
+  border-left: 1px solid #D72323;
+}
+
+#updates-bio:hover {
+  background-color:#D72323;
+  border-left: 1px solid #eee;
+  /* transition: ease-in-out 200ms; */
+  box-shadow: #222 5px 5px 10px;
+  font-size: 20px;
+}
 
 .blinker {
   animation-name: blinker;
@@ -118,13 +132,6 @@ header {
   flex: 1 1 0px
 }
 
-.bio-box:hover {
-  background-color:#D72323;
-  border-left: 1px solid #eee;
-  /* transition: ease-in-out 200ms; */
-  box-shadow: #222 5px 5px 10px;
-}
-
 .bio-box h2 {
   font-size: 18px;
   text-align: center;
@@ -132,6 +139,16 @@ header {
 .bio-box p {
   font-size: 14px;
   text-align: center;
+}
+
+.bio-box:hover {
+  background-color:#D72323;
+  border-left: 1px solid #eee;
+  box-shadow: #222 5px 5px 10px;
+}
+
+.bio-box:hover p {
+  font-size: 18px;
 }
 
 .sentence-wrapper {
