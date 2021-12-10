@@ -264,7 +264,20 @@ header {
 
 /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
 @media (max-width: 500px) {
-  * {flex-direction: column;}
+  * {
+    flex-direction: column;
+    font-size: 14px;
+  }
+  #portrait {
+    width:300px;
+    height:auto;
+  }
+  #bio-text {
+    font-size: 14px;
+  }
+  span {
+    font-size: 60px;
+  }
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
   .bio-boxes {flex-direction:column;}
