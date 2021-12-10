@@ -54,7 +54,7 @@ header {
   flex-direction: column;
 }
 
-#updates-bio {
+.updates-bio {
   transition-duration: 300ms;
   background-color: #3A4750;
   margin: 1%;
@@ -62,7 +62,7 @@ header {
   border-left: 1px solid #D72323;
 }
 
-#updates-bio:hover {
+.updates-bio:hover {
   background-color:#D72323;
   border-left: 1px solid #eee;
   /* transition: ease-in-out 200ms; */
@@ -263,7 +263,8 @@ header {
 
 
 /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
-@media (max-height: 500px) {
+@media (max-width: 500px) {
+  * {flex-direction: column;}
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
   .bio-boxes {flex-direction:column;}
